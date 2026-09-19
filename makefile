@@ -1,5 +1,5 @@
 
-CXX = g++
+CXX = gcc
 CXXFLAGS = -Wall -Wextra -std=c11
 
 TARGET = criptografar
