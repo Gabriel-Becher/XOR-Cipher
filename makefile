@@ -1,19 +1,21 @@
 
 CXX = g++
-CXXFLAGS = -Wall -Wextra -std=c++17
+CXXFLAGS = -Wall -Wextra -std=c11
 
 TARGET = criptografar
 SOURCE = criptografar.c
 
 .SILENT:
 
-all: $(TARGET)
+all: $(TARGET) run
 
 $(TARGET): $(SOURCE)
 	$(CXX) $(CXXFLAGS) $(SOURCE) -o $(TARGET)
 
-test:
-	./$(TARGET) <teste.in> teste.out chave.out
+run:
+	./$(TARGET) < teste.in > teste.out chave.out
 
 clean:
 	del /Q $(TARGET).exe 2>NUL || exit 0
+
+
